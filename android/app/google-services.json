@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "31385501349",
+    "project_id": "go-camping-2f33d",
+    "storage_bucket": "go-camping-2f33d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31385501349:android:46ad62a8970b0bdd49174c",
+        "android_client_info": {
+          "package_name": "com.bijuice.go_camping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31385501349-ga8fvbedndslbd87g0ovh93hgnc4q5b3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAukzApzBhm6aXjBdZG3H-uUVHQGtndQSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31385501349-ga8fvbedndslbd87g0ovh93hgnc4q5b3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
