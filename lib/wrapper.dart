@@ -7,8 +7,12 @@ import 'package:provider/provider.dart';
 class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<CustomUser>(context);
+    final user = context.watch<CustomUser>();
 
-    return MaterialApp(home: user == null ? LogIn() : Home());
+    if (user == null) {
+      return LogIn();
+    } else {
+      return Home();
+    }
   }
 }

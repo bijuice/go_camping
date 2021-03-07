@@ -55,11 +55,12 @@ class _AppState extends State<App> {
     if (!_initialized) {
       return Loading();
     }
-
-    return StreamProvider<CustomUser>.value(
+    //firebase instance
+    final AuthenticationService _auth = AuthenticationService();
+    return StreamProvider<CustomUser>(
       initialData: null,
-      value: AuthenticationService().user,
-      child: Wrapper(),
+      create: (_) => _auth.onAuthChange(),
+      child: MaterialApp(home: Wrapper()),
     );
   }
 }

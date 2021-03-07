@@ -10,7 +10,7 @@ class AuthenticationService {
   }
 
   //on auth user stream
-  Stream<CustomUser> get user {
+  Stream<CustomUser> onAuthChange() {
     return _auth.authStateChanges().map(_userFromFirebase);
   }
 
@@ -23,6 +23,45 @@ class AuthenticationService {
     } catch (e) {
       print(e.toString());
       return null;
+    }
+  }
+
+  //register with email and password
+
+  Future registerWithEmailAndPassword(String email, String password) async {
+    try {
+      UserCredential userCredential = await _auth
+          .createUserWithEmailAndPassword(email: email, password: password);
+      User user = userCredential.user;
+
+      return _userFromFirebase(user);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        return 'weak';
+      } else if (e.code == 'email-already-in-use') {
+        return 'used';
+      }
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
+  //sign in with email and password
+
+  Future logInWithEmailAndPassword(String email, String password) async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+
+      User user = userCredential.user;
+      return _userFromFirebase(user);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        return 'email';
+      } else if (e.code == 'wrong-password') {
+        return 'password';
+      }
     }
   }
 
