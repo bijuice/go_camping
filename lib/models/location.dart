@@ -5,14 +5,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class Place {
   String name;
   GeoPoint geoPoint;
-  double positive, negative, distance;
+  int positive, negative;
   List<String> images;
 
-  Place(
-      {this.name,
-      this.geoPoint,
-      this.distance,
-      this.images,
-      this.negative,
-      this.positive});
+  Place({this.name, this.geoPoint, this.images, this.negative, this.positive});
 }

@@ -14,7 +14,6 @@ class _AuthenticateState extends State<Authenticate> {
 
     //TODO: implement login/signup switching
     //TODO: implement password hashing
-    //TDO:
 
     if (showLogIn) {
       return LogIn();
