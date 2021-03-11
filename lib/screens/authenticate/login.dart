@@ -43,7 +43,10 @@ class _LogInState extends State<LogIn> {
                     child: Text(
                       'Log In To',
                       style: TextStyle(
-                          color: Colors.blue, fontSize: 20, letterSpacing: 2),
+                        color: Colors.blue,
+                        fontSize: 20,
+                        letterSpacing: 2,
+                      ),
                     ),
                   ),
                   Align(
