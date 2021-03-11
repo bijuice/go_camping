@@ -7,5 +7,7 @@ I built this app to practice the following skills:
 2. Firebase Auth
 3. Firebase Realtime Database
 4. Firebase Storage
-5. Use of Flutter Geolocator Plugin
+5. Flutter Geolocator Package
 6. Google Maps API
+7. Hashing pass
+8. Flutter Crypto Package
